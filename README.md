@@ -114,13 +114,68 @@ Este slide permite un **análisis a nivel empleado**.
 Permite realizar **búsquedas, segmentaciones y análisis individuales**.
 
 ---
+## 🧪 Generación de Datos
 
-## 🧪 Generación de datos
-Script en Python que genera un dataset sintético con:
-- Distribuciones realistas  
-- Reglas de negocio  
-- Consistencia temporal  
+El dataset utilizado en este proyecto fue generado mediante un **script en Python** a partir de un prompt de diseño que define reglas realistas de negocio para datos de Recursos Humanos.
+
+### Prompt utilizado
+
+Se solicitó a ChatGPT generar un script que cumpliera con:
+
+- 8.950 registros
+- Distribución de género:
+  - 46% Female
+  - 54% Male
+- Ubicación por estados y ciudades predefinidas
+- Fechas de contratación (2015–2024) con probabilidades personalizadas
+- Departamentos con pesos específicos
+- Cargos dependientes del departamento
+- Nivel educacional según el cargo
+- Evaluación de desempeño con probabilidades
+- Horas extra (30% Yes, 70% No)
+- Salarios por rango según cargo y departamento
+- Fecha de nacimiento coherente con edad y cargo
+- 11.2% de empleados con fecha de término (>= 6 meses después de contratación)
+- Cálculo de salario ajustado según:
+  - género
+  - nivel educacional
+  - edad
+
+---
+
+### Script de generación
+
+El archivo generate_hr_dataset.py implementa toda esta lógica utilizando:
+
+- `pandas`
+- `numpy`
+- `faker`
+- distribuciones probabilísticas
+- reglas condicionales por cargo
+
+### Variables principales generadas
+
+- employee_id  
+- first_name / last_name  
+- gender  
+- state / city  
+- hiredate  
+- department  
+- job_title  
+- education_level  
+- performance_rating  
+- overtime  
+- birthdate  
+- termdate  
+- salary (ajustado dinámicamente)
+
+---
+
+### Ejecución
+
+Para generar el archivo CSV:
 
 ```bash
-python scripts/generate_hr_dataset.py --output data/hr_dataset.csv
+python scripts/generate_hr_dataset.py
+
 
