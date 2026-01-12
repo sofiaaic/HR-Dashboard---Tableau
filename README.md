@@ -171,13 +171,6 @@ El archivo generate_hr_dataset.py implementa toda esta lógica utilizando:
 
 ---
 
-### Ejecución
-
-Para generar el archivo CSV:
-
-```bash
-python scripts/generate_hr_dataset.py
-
 ## Créditos
 
 Este proyecto fue inspirado en el tutorial:
