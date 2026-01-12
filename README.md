@@ -178,4 +178,15 @@ Para generar el archivo CSV:
 ```bash
 python scripts/generate_hr_dataset.py
 
+## Créditos
+
+Este proyecto fue inspirado en el tutorial:
+
+**A Complete HR Tableau Practice Project End-to-End**  
+Video de *Data With Baraa*  
+👉 https://www.youtube.com/watch?v=UcGF09Awm4Y
+
+Gracias por la referencia y la explicación que sirvieron como base para la estructura y los análisis.
+
+
 
